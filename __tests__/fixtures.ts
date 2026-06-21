@@ -76,6 +76,7 @@ export function expectedDocument(): EN16931Document {
       garantiePercentage: D(0),
       garantieAmount: D('0.00'),
       bankGuaranty: false,
+      bankGuarantyAmount: D('0.00'),
       netToCollect: D('1634.38'),
     },
     precedingInvoiceRefs: [],

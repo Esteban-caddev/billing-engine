@@ -136,9 +136,12 @@ export function computeDocument(
   const prorataAmount = money(prorataBase.times(prorataPercentage).div(100))
 
   const garantieBase = taxInclusive                             // base TTC = BT-111
-  const garantieAmount = bankGuaranty
-    ? money(ZERO)
-    : money(garantieBase.times(garantiePercentage).div(100))
+  // Montant théorique de RG (base TTC × %), calculé dans tous les cas.
+  const garantieTheoretical = money(garantieBase.times(garantiePercentage).div(100))
+  // Caution bancaire : aucune retenue soustraite, mais on garde le montant
+  // garanti par la banque (= RG demandée à la banque) pour l'afficher.
+  const garantieAmount = bankGuaranty ? money(ZERO) : garantieTheoretical
+  const bankGuarantyAmount = bankGuaranty ? garantieTheoretical : money(ZERO)
 
   const netToCollect = money(payable.minus(prorataAmount).minus(garantieAmount))
 
@@ -150,6 +153,7 @@ export function computeDocument(
     garantiePercentage,
     garantieAmount,
     bankGuaranty,
+    bankGuarantyAmount,
     netToCollect,
   }
 

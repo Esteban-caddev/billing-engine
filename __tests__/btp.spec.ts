@@ -74,6 +74,8 @@ describe('Facturation BTP', () => {
       })
       expect(doc.retainage.garantieAmount.toFixed(2)).toBe('0.00')
       expect(doc.retainage.netToCollect.toFixed(2)).toBe('1634.38') // = BT-115 plein
+      // la RG demandée à la banque reste connue (1 634,38 × 5 %)
+      expect(doc.retainage.bankGuarantyAmount.toFixed(2)).toBe('81.72')
     })
   })
 

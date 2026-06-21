@@ -175,6 +175,7 @@ function applyDocToProposition(
     finalTTC: summation.taxInclusive.toNumber(),
     totalProrata: retainage.prorataAmount.toNumber(),
     totalGarantie: retainage.garantieAmount.toNumber(),
+    totalBankGuaranty: retainage.bankGuarantyAmount.toNumber(),
     netToPay: retainage.netToCollect.toNumber(),
   }
 }
@@ -268,6 +269,8 @@ function subtractMonetary(
     out.totalProrata = round2((cum.totalProrata ?? 0) - (prev.totalProrata ?? 0))
   if (cum.totalGarantie !== undefined || prev.totalGarantie !== undefined)
     out.totalGarantie = round2((cum.totalGarantie ?? 0) - (prev.totalGarantie ?? 0))
+  if (cum.totalBankGuaranty !== undefined || prev.totalBankGuaranty !== undefined)
+    out.totalBankGuaranty = round2((cum.totalBankGuaranty ?? 0) - (prev.totalBankGuaranty ?? 0))
   if (cum.netToPay !== undefined || prev.netToPay !== undefined)
     out.netToPay = round2((cum.netToPay ?? 0) - (prev.netToPay ?? 0))
   return out

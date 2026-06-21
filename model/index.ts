@@ -114,6 +114,7 @@ export interface RetainageSummary {
   garantiePercentage: Decimal
   garantieAmount: Decimal // retenue de garantie (0 si caution bancaire)
   bankGuaranty: boolean
+  bankGuarantyAmount: Decimal // RG demandée à la banque (caution) — NON soustraite du net
   netToCollect: Decimal // = BT-115 − prorata − garantie
 }
 
@@ -215,6 +216,7 @@ export interface NodeMonetary {
   // proposition uniquement (retenues BTP)
   totalProrata?: number
   totalGarantie?: number
+  totalBankGuaranty?: number // RG demandée à la banque (caution) — non soustraite du net
   netToPay?: number
 }
 

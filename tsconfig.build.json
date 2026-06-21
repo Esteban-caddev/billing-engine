@@ -6,11 +6,13 @@
     "**/*.spec.ts",
     "__tests__"
   ],
-  "baseUrl": "./",
-  "paths": {
-    "@/*": [
-      "."
-    ]
-  },
-  "resolveJsonModule": true
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@/*": [
+        "."
+      ]
+    },
+    "resolveJsonModule": true
+  }
 }

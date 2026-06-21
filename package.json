@@ -7,10 +7,6 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/neven-crm/billing-engine.git"
-  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
