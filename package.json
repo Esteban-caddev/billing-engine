@@ -1,6 +1,6 @@
 {
   "name": "@neven-crm/billing-engine",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Moteur de calcul EN 16931 / BTP (pur, Decimal.js) — partagé front/back",
   "license": "UNLICENSED",
   "private": true,
