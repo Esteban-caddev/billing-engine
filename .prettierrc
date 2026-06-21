@@ -1,0 +1,10 @@
+{
+  "semi": false,
+  "singleQuote": true,
+  "jsxSingleQuote": true,
+  "tabWidth": 2,
+  "importOrder": ["^[./]"],
+  "importOrderSeparation": true,
+  "trailingComma": "es5",
+  "endOfLine": "auto"
+}

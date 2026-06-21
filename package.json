@@ -1,0 +1,52 @@
+{
+  "name": "@neven-crm/billing-engine",
+  "version": "0.0.1",
+  "description": "Moteur de calcul EN 16931 / BTP (pur, Decimal.js) — partagé front/back",
+  "license": "UNLICENSED",
+  "private": true,
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/neven-crm/billing-engine.git"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "build:watch": "tsc -p tsconfig.build.json --watch",
+    "format": "prettier --write \"*.ts\" \"**/*.ts\"",
+    "lint": "eslint . --fix",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.18.0",
+    "@jest/types": "^29.5.14",
+    "@stylistic/eslint-plugin": "^5.2.3",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.10.7",
+    "eslint": "^9.18.0",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-jest": "^29.0.1",
+    "eslint-plugin-prettier": "^5.2.2",
+    "globals": "^16.0.0",
+    "jest": "^29.7.0",
+    "prettier": "^3.4.2",
+    "ts-jest": "^29.2.5",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.20.0"
+  },
+  "dependencies": {
+    "decimal.js": "^10.6.0"
+  }
+}
