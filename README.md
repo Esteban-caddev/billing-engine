@@ -2,6 +2,17 @@
 
 Moteur de calcul EN 16931 / BTP (pur, Decimal.js) — partagé front/back
 
+## Features
+
+- Conforme à la norme EN 16931 pour la facturation électronique — priorité au respect des règles sémantiques et structurelles requises par les échanges électroniques. (tests unitaire de toutes les règles)
+- Calculs financiers basés sur Decimal.js : zéro utilisation de nombres flottants, précision monétaire assurée.
+- Ventilation détaillée par ligne : quantités, prix unitaires, TVA, réductions et totaux.
+- Spécificités règles BTP : avancement, retenue de garantie (caution bancaire), compte prorata...
+    - Rattrapage de centime (cent rounding reconciliation) : mécanisme d'ajustement déterministe pour que la somme des factures corresponde exactement au total du devis après application des arrondis.
+- Spécificités règles ERP : marges, couts...
+- Validations métiers et invariants (BR-CO-*) chaque règle renvoie une erreur si non conforme.
+- Pipeline réutilisable front/back : flattenTree → computeDocument → computeBreakdown.
+
 ## Installation
 
 Installez le package depuis GitHub Packages :
